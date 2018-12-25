@@ -42,13 +42,15 @@
 				<version>2.5.2</version>
 				<configuration>
 					<goals>install</goals>
+					<localCheckout>true</localCheckout>
+					<pushChanges>false</pushChanges>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 	<scm>
 		<developerConnection>scm:git:git@github.com:badabapidas/bada-pet-clinic.git</developerConnection>
-<!-- 		<tag>bada-pet-clinic-0.0.1</tag> -->
+		<!-- <tag>bada-pet-clinic-0.0.1</tag> -->
 	</scm>
 
 </project>
