@@ -10,7 +10,7 @@
 
 	<groupId>com.sag.bada</groupId>
 	<artifactId>bada-pet-clinic</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<modules>
 		<module>pet-clinic-data</module>
@@ -47,8 +47,8 @@
 		</plugins>
 	</build>
 	<scm>
-		<developerConnection>scm:git:https://github.com/badabapidas/bada-pet-clinic.git</developerConnection>
-		<tag>bada-pet-clinic-0.0.1</tag>
+		<developerConnection>scm:git:git@github.com:badabapidas/bada-pet-clinic.git</developerConnection>
+<!-- 		<tag>bada-pet-clinic-0.0.1</tag> -->
 	</scm>
 
 </project>
