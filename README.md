@@ -1,2 +1,2 @@
-# sfg-pet-clinic
+# bada-pet-clinic
 A work thorough with Spring boot framwork with thymeleaf
