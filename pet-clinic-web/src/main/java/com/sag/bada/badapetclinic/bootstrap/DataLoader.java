@@ -1,5 +1,6 @@
 package com.sag.bada.badapetclinic.bootstrap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -7,20 +8,20 @@ import com.sag.bada.badapetclinic.model.Owner;
 import com.sag.bada.badapetclinic.model.Vet;
 import com.sag.bada.badapetclinic.services.OwnerService;
 import com.sag.bada.badapetclinic.services.VetService;
-import com.sag.bada.badapetclinic.services.map.OwnerServiceMap;
-import com.sag.bada.badapetclinic.services.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
 
 	private final OwnerService ownerService;
-	private final VetService vetService;
 
-	public DataLoader() {
-		this.ownerService = new OwnerServiceMap();
-		this.vetService = new VetServiceMap();
-		;
+	@Autowired
+	public DataLoader(OwnerService ownerService, VetService vetService) {
+		super();
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
+
+	private final VetService vetService;
 
 	@Override
 	public void run(String... args) throws Exception {

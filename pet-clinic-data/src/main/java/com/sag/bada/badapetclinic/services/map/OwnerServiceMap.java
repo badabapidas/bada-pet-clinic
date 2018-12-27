@@ -2,9 +2,13 @@ package com.sag.bada.badapetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import com.sag.bada.badapetclinic.model.Owner;
 import com.sag.bada.badapetclinic.services.OwnerService;
 
+
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	@Override
