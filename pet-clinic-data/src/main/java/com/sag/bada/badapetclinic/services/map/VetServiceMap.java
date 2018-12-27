@@ -3,9 +3,9 @@ package com.sag.bada.badapetclinic.services.map;
 import java.util.Set;
 
 import com.sag.bada.badapetclinic.model.Vet;
-import com.sag.bada.badapetclinic.services.CrudService;
+import com.sag.bada.badapetclinic.services.VetService;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
 	@Override
 	public Set<Vet> findAll() {
