@@ -1,10 +1,13 @@
 package com.sag.bada.badapetclinic.bootstrap;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.sag.bada.badapetclinic.model.Owner;
+import com.sag.bada.badapetclinic.model.Pet;
 import com.sag.bada.badapetclinic.model.PetType;
 import com.sag.bada.badapetclinic.model.Vet;
 import com.sag.bada.badapetclinic.services.OwnerService;
@@ -40,12 +43,32 @@ public class DataLoader implements CommandLineRunner {
 		Owner owner1 = new Owner();
 		owner1.setFirstName("Bapi");
 		owner1.setLastName("Das");
+		owner1.setAddress("Martahhalli");
+		owner1.setCity("Bangalore");
+		owner1.setTelephone("11111111");
+
+		Pet bapisPet = new Pet();
+		bapisPet.setPetType(saveDogPetType);
+		bapisPet.setOwner(owner1);
+		bapisPet.setBirthDate(LocalDate.now());
+		bapisPet.setName("Rosco");
+		owner1.getPets().add(bapisPet);
 
 		ownerService.save(owner1);
 
 		Owner owner2 = new Owner();
 		owner2.setFirstName("Umar");
 		owner2.setLastName("BaBa");
+		owner2.setAddress("Assam");
+		owner1.setCity("Guwahati");
+		owner1.setTelephone("2222222");
+
+		Pet umarsPet = new Pet();
+		umarsPet.setPetType(saveCatPetType);
+		umarsPet.setOwner(owner2);
+		umarsPet.setBirthDate(LocalDate.now());
+		umarsPet.setName("Batra");
+		owner2.getPets().add(umarsPet);
 
 		ownerService.save(owner2);
 
