@@ -2,6 +2,7 @@ package com.sag.bada.badapetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.sag.bada.badapetclinic.model.Speciality;
@@ -10,6 +11,7 @@ import com.sag.bada.badapetclinic.services.SpecialityService;
 import com.sag.bada.badapetclinic.services.VetService;
 
 @Service
+@Profile({ "default", "map" })
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
 	private final SpecialityService specialityService;

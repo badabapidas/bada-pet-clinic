@@ -2,13 +2,14 @@ package com.sag.bada.badapetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.sag.bada.badapetclinic.model.PetType;
 import com.sag.bada.badapetclinic.services.PetTypeService;
 
-
 @Service
+@Profile({ "default", "map" })
 public class PetTypeMapService extends AbstractMapService<PetType, Long> implements PetTypeService {
 
 	@Override

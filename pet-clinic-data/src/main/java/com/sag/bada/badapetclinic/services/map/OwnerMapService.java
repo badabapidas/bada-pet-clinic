@@ -2,6 +2,7 @@ package com.sag.bada.badapetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.sag.bada.badapetclinic.model.Owner;
@@ -11,6 +12,7 @@ import com.sag.bada.badapetclinic.services.PetService;
 import com.sag.bada.badapetclinic.services.PetTypeService;
 
 @Service
+@Profile({ "default", "map" })
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	private final PetTypeService petTypeService;

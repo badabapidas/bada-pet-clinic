@@ -2,12 +2,14 @@ package com.sag.bada.badapetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.sag.bada.badapetclinic.model.Speciality;
 import com.sag.bada.badapetclinic.services.SpecialityService;
 
 @Service
+@Profile({ "default", "map" })
 public class SpecialtyMapService extends AbstractMapService<Speciality, Long> implements SpecialityService {
 
 	@Override
