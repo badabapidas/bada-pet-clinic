@@ -22,9 +22,9 @@ public class Owner extends Person {
 	@Column(name = "telephone")
 	private String telephone;
 
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
 	private Set<Pet> pets = new HashSet<Pet>();
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
 	public Set<Pet> getPets() {
 		return pets;
 	}

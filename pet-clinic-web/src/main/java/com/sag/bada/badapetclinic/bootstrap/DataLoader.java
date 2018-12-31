@@ -11,10 +11,12 @@ import com.sag.bada.badapetclinic.model.Pet;
 import com.sag.bada.badapetclinic.model.PetType;
 import com.sag.bada.badapetclinic.model.Speciality;
 import com.sag.bada.badapetclinic.model.Vet;
+import com.sag.bada.badapetclinic.model.Visit;
 import com.sag.bada.badapetclinic.services.OwnerService;
 import com.sag.bada.badapetclinic.services.PetTypeService;
 import com.sag.bada.badapetclinic.services.SpecialityService;
 import com.sag.bada.badapetclinic.services.VetService;
+import com.sag.bada.badapetclinic.services.VisitService;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -23,15 +25,16 @@ public class DataLoader implements CommandLineRunner {
 	private final VetService vetService;
 	private final PetTypeService petTypeService;
 	private final SpecialityService specialtiesService;
+	private final VisitService visitService;
 
 	@Autowired
 	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
-			SpecialityService specialtiesService) {
-		super();
+			SpecialityService specialtiesService, VisitService visitService) {
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 		this.petTypeService = petTypeService;
 		this.specialtiesService = specialtiesService;
+		this.visitService = visitService;
 	}
 
 	@Override
@@ -88,6 +91,13 @@ public class DataLoader implements CommandLineRunner {
 		// save the owner instances
 		ownerService.save(owner1);
 		ownerService.save(owner2);
+
+		Visit catVisit = new Visit();
+		catVisit.setPet(umarsPet);
+		catVisit.setDate(LocalDate.now());
+		catVisit.setDescription("Sneezy Kitty");
+		visitService.save(catVisit);
+
 		System.out.println("Loaded Owners....");
 
 		// Create 3 specialities for Vets
